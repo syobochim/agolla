@@ -42,5 +42,5 @@ dependencies {
 	compile "org.seasar.doma.boot:doma-spring-boot-starter:${domaSpringBootVersion}" 
 	compile "org.seasar.doma:doma:${domaVersion}" 
     compile 'com.h2database:h2'
-	compile 'org.flywaydb:flyway-core' 
+//	compile 'org.flywaydb:flyway-core' 
 }
