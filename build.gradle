@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+        domaVersion = '2.12.0'
+        domaSpringBootVersion = '1.1.0'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+	}
+}
+
+apply plugin: 'java'
+apply from: 'eclipse.gradle'
+apply plugin: 'spring-boot' 
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+}
+
+compileJava.dependsOn processResources
+processResources.destinationDir = compileJava.destinationDir
+
+//compileJava.options.compilerArgs = ['-Adoma.domain.converters=app.domain.repository.Converters']
+
+repositories {
+	mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-web' 
+	compile 'org.springframework.boot:spring-boot-starter-thymeleaf' 
+	compile 'org.springframework.boot:spring-boot-starter-jdbc' 
+	compile "org.seasar.doma.boot:doma-spring-boot-starter:${domaSpringBootVersion}" 
+	compile "org.seasar.doma:doma:${domaVersion}" 
+    compile 'com.h2database:h2'
+	compile 'org.flywaydb:flyway-core' 
+}
