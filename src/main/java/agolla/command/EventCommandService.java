@@ -3,7 +3,7 @@ package agolla.command;
 import agolla.domain.Event;
 import agolla.domain.Join;
 import agolla.domain.User;
-import agolla.domain.repository.DomaEventRepository;
+import agolla.domain.repository.EventRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class EventCommandService {
 
-    private final DomaEventRepository repository;
+    private final EventRepository repository;
 
-    public EventCommandService(DomaEventRepository repository) {
+    public EventCommandService(EventRepository repository) {
         this.repository = repository;
     }
 
