@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Join implements Serializable{
-    public final Event event;
+    public final Training training;
     public final User user;
 
-    public Join(Event event, User user) {
-        this.event = Objects.requireNonNull(event);
+    public Join(Training training, User user) {
+        this.training = Objects.requireNonNull(training);
         this.user = Objects.requireNonNull(user);
     }
 
-    public static Join open(Event event, User user) {
-        return new Join(event, user);
+    public static Join open(Training training, User user) {
+        return new Join(training, user);
     }
 }

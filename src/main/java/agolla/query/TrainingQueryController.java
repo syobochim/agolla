@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class EventQueryController {
+public class TrainingQueryController {
 
     @GetMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("joinEvent");
+        return new ModelAndView("joinTraining");
     }
 
 }

@@ -1,6 +1,6 @@
 package agolla.command;
 
-import agolla.domain.Event;
+import agolla.domain.Training;
 import agolla.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,25 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/command/event")
-public class EventCommandController {
+@RequestMapping("/command/training")
+public class TrainingCommandController {
 
-    private final EventCommandService service;
+    private final TrainingCommandService service;
 
-    public EventCommandController(EventCommandService service) {
+    public TrainingCommandController(TrainingCommandService service) {
         this.service = service;
     }
 
     @PostMapping("open")
-    public String open(@RequestParam Event event) {
-        service.openEvent(event);
+    public String open(@RequestParam Training training) {
+        service.openTraining(training);
         return "redirect:/";
     }
 
     @PostMapping("join")
-    public String join(@RequestParam Event event,
+    public String join(@RequestParam Training training,
                        @RequestParam User user) {
-        service.joinEvent(event, user);
+        service.joinTraining(training, user);
         return "redirect:/";
     }
 
