@@ -3,7 +3,7 @@ package agolla.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Join implements Serializable {
+public class Join implements Serializable{
     public final Event event;
     public final User user;
 

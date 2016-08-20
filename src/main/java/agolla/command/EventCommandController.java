@@ -17,6 +17,12 @@ public class EventCommandController {
         this.service = service;
     }
 
+    @PostMapping("open")
+    public String open(@RequestParam Event event) {
+        service.openEvent(event);
+        return "redirect:/";
+    }
+
     @PostMapping("join")
     public String join(@RequestParam Event event,
                        @RequestParam User user) {

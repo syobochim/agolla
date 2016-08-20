@@ -17,8 +17,12 @@ public class EventCommandService {
         this.repository = repository;
     }
 
+    public void openEvent(Event event) {
+        repository.create(event);
+    }
+
     public void joinEvent(Event event, User user) {
         Join join = Join.open(event, user);
-        repository.save(join);
+        repository.join(join);
     }
 }
