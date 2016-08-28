@@ -1,6 +1,6 @@
 package agolla.command;
 
-import agolla.domain.Training;
+import agolla.domain.Quest;
 import agolla.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,25 +8,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/command/training")
-public class TrainingCommandController {
+@RequestMapping("/command/quest")
+public class QuestCommandController {
 
-    private final TrainingCommandService service;
+    private final QuestCommandService service;
 
-    public TrainingCommandController(TrainingCommandService service) {
+    public QuestCommandController(QuestCommandService service) {
         this.service = service;
     }
 
     @PostMapping("open")
-    public String open(@RequestParam Training training) {
-        service.openTraining(training);
+    public String open(@RequestParam Quest quest) {
+        service.openQuest(quest);
         return "redirect:/";
     }
 
     @PostMapping("join")
-    public String join(@RequestParam Training training,
+    public String join(@RequestParam Quest quest,
                        @RequestParam User user) {
-        service.joinTraining(training, user);
+        service.joinQuest(quest, user);
         return "redirect:/";
     }
 

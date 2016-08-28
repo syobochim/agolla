@@ -2,15 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Training</title>
+    <title>Quest</title>
 </head>
 <body>
-<form data-th-action="@{/command/training/open}" method="POST">
-    <input type="text" name="training"/>
+<form data-th-action="@{/command/quest/open}" method="POST">
+    <input type="text" name="quest"/>
     <button type="submit">Submit</button>
 </form>
-<form data-th-action="@{/command/training/join}" method="POST">
-    <input type="text" name="training"/>
+<form data-th-action="@{/command/quest/join}" method="POST">
+    <input type="text" name="quest"/>
     <input type="text" name="user"/>
     <button type="submit">Submit</button>
 </form>
