@@ -39,8 +39,10 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'org.springframework.boot:spring-boot-starter-jdbc'
+    compile 'org.springframework.boot:spring-boot-starter-artemis'
     compile "org.seasar.doma.boot:doma-spring-boot-starter:${domaSpringBootVersion}"
     compile "org.seasar.doma:doma:${domaVersion}"
+    compile 'org.apache.activemq:artemis-jms-server'
     compile 'com.h2database:h2'
 //	compile 'org.flywaydb:flyway-core' 
 }
